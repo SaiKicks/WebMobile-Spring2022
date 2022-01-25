@@ -2,10 +2,10 @@
 
 Web Mobile Programming course
 
-Creator & owner:
+Creator & contrubutor:
 Eeshwara Sai Tota
 ettkv@umsystem.edu
 
-Co-Contributor:
+Co-contributor:
 Sarath Chandra Kolisetty
 sk83g@umsystem.edu
