@@ -1,9 +1,9 @@
 function playGame(humanValue) {
     botValue = random()
-    humanItem = valueToItem(humanValue)
-    botItem = valueToItem(botValue)
+    humanWeapon = valueToWeapon(humanValue)
+    botWeapon = valueToWeapon(botValue)
 
-    document.getElementById("match").innerHTML = "Human " + humanItem + " VS Bot " + botItem
+    document.getElementById("match").innerHTML = "<span id='weapon1'>" + humanWeapon + " </span> " + botWeapon
     document.getElementById("result").innerHTML = fightResult(humanValue, botValue)
 }
 
@@ -11,7 +11,7 @@ function random() {
     return Math.floor(Math.random() * 3);
 }
 
-function valueToItem(value) {
+function valueToWeapon(value) {
     if(value === 0) {
         return "Rock"
     }else if(value == 1) {

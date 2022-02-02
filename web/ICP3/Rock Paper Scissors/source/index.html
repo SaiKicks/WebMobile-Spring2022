@@ -9,16 +9,17 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Rock Paper Scissors!</h1>
-    <p>Choose weapon to play</p>
-    <img src="./RPS.png" alt="Image with Rock Paper Scissors" usemap="#rps">
+    <h1>Rock Paper Scissors</h1>
+    <div class="play">Click on any weapon to play!</div>
+    <div><img src="./RPS.png" alt="Image with Rock Paper Scissors" usemap="#rps"></div>
 
     <map name="rps">
         <area shape="rect" onclick="playGame(0)" coords="142, 39, 345, 243" alt="Rock">
         <area shape="rect" onclick="playGame(1)" coords="42, 255, 246, 459," alt="Paper">
         <area shape="rect" onclick="playGame(2)" coords="259, 255, 463, 459" alt="Scissors">
     </map>
-    <p id="match"></p>
-    <p><b id="result"></b></p>
+    <div class="fight">Human weapon VS Bot weapon</div>
+    <div id="match" class="fight"></div>
+    <div id="result" class="fight"></div>
 </body>
 </html>
