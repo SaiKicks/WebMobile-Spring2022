@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors!</h1>
+    <p>Choose weapon to play</p>
+    <img src="./RPS.png" alt="Image with Rock Paper Scissors" usemap="#rps">
+
+    <map name="rps">
+        <area shape="rect" onclick="playGame(0)" coords="142, 39, 345, 243" alt="Rock">
+        <area shape="rect" onclick="playGame(1)" coords="42, 255, 246, 459," alt="Paper">
+        <area shape="rect" onclick="playGame(2)" coords="259, 255, 463, 459" alt="Scissors">
+    </map>
+    <p id="match"></p>
+    <p><b id="result"></b></p>
+</body>
+</html>
