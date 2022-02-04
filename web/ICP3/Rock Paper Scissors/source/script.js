@@ -1,3 +1,4 @@
+// Rock Paper Scissors game playing method
 function playGame(humanValue) {
     botValue = random()
     humanWeapon = valueToWeapon(humanValue)
@@ -6,11 +7,11 @@ function playGame(humanValue) {
     document.getElementById("match").innerHTML = "<span id='weapon1'>" + humanWeapon + " </span> " + botWeapon
     document.getElementById("result").innerHTML = fightResult(humanValue, botValue)
 }
-
+// Random number between 0 to 2
 function random() {
     return Math.floor(Math.random() * 3);
 }
-
+// Number value to weapon item convertor
 function valueToWeapon(value) {
     if(value === 0) {
         return "Rock"
@@ -20,7 +21,7 @@ function valueToWeapon(value) {
         return "Scissors"
     }
 }
-
+// Fight result
 function fightResult(human, bot) {
     msg = ""
     if(human === bot) {
