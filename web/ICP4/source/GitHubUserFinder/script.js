@@ -15,13 +15,13 @@ function showUser(user) {
     $("#profile").children('h2').text(user.name);
     $(".avatar").html("<img src='"+user.avatar_url+"'>");
     $(".information").html("<div class='col-md-12'>ID: "+user.id+"</div>");
-    $(".github-link").html("Github link: <a href='"+user.html_url+"'> "+user.html_url+" </a>");
+    $(".github-link").html("Github link: <a href='"+user.html_url+"' target='_blank'> "+user.html_url+" </a>");
 }
 
 function noSuchUser(username) {
     //3. set the elements such that a suitable message is displayed
     // Clearing the content and showing no such user msg
-    $("#profile").children('h2').text("No such user please try different username!");
+    $("#profile").children('h2').text("No such username exists, please try different username!");
     $(".avatar").text("");
     $(".information").text("");
     $(".github-link").text("");
