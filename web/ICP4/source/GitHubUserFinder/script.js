@@ -3,6 +3,7 @@ function getGithubInfo(user) {
     //1. Create an instance of XMLHttpRequest class and send a GET request using it.
     // The function should finally return the object(it now contains the response!)
     var xhr = new XMLHttpRequest();
+    // GET api call git to fetch user details
     xhr.open('GET', 'https://api.github.com/users/'+user, false);
     xhr.send();
     return xhr;
@@ -10,8 +11,7 @@ function getGithubInfo(user) {
 
 function showUser(user) {
     //2. set the contents of the h2 and the two div elements in the div '#profile' with the user content
-    console.log(user)
-    //$("#profile").text(JSON.stringify(user));
+    // Setting content of user on web page
     $("#profile").children('h2').text(user.name);
     $(".avatar").html("<img src='"+user.avatar_url+"'>");
     $(".information").html("<div class='col-md-12'>ID: "+user.id+"</div>");
@@ -20,7 +20,8 @@ function showUser(user) {
 
 function noSuchUser(username) {
     //3. set the elements such that a suitable message is displayed
-    $("#profile").children('h2').text("no such user");
+    // Clearing the content and showing no such user msg
+    $("#profile").children('h2').text("No such user please try different username!");
     $(".avatar").text("");
     $(".information").text("");
     $(".github-link").text("");
