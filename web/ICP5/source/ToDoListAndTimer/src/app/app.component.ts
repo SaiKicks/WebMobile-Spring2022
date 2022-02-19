@@ -8,21 +8,28 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   // define list of items
-  items= [];
+  items= [{name: 'sai', status: 'todo'},
+  {name: 'preethi', status: 'todo'}];
+  newToDoTask = "";
 
   // Write code to push new item
   submitNewItem() {
-
+    var task = {
+      status: "todo",
+      name: this.newToDoTask
+   };
+    this.items.push(task);
+    this.newToDoTask = "";
   }
 
   // Write code to complete item
-  completeItem() {
-
+  completeItem(pos) {
+    this.items[pos].status = "done";
   }
 
   // Write code to delete item
-  deleteItem() {
-
+  deleteItem(pos) {
+    this.items.splice(pos, 1);
   }
 
 }

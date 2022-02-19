@@ -2,11 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Calculator</title>
-  // 1. write Typescript code in "app.component.ts" to work with ToDo list
+  <title>To Do List and Timer</title>
 </head>
 <body>
-// 2. write html(view) code to display the ToDos
-
+<h1>Things To Do</h1>
+<form (submit)="submitNewItem()">
+  <input type="text" name="newToDoTask" placeholder="Enter your to-do task" [(ngModel)]="newToDoTask">
+  <input type="submit" value="Add To Do Task">
+</form>
+<div *ngFor="let item of items; let ind = index">
+  <div class="todo">{{item.name}}</div>
+  <div class="status">{{item.status}}</div>
+  <button (click)="completeItem(ind)">Done</button>
+  <button (click)="deleteItem(ind)">Remove</button>
+</div>
 </body>
 </html>
