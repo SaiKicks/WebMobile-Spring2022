@@ -47,8 +47,8 @@ export class SearchRecipeComponent implements OnInit {
        "689efccefeaeace910779467d1512aed"+
        "&q="
        const foodUrl = recipeUrl + this.recipeValue;
-       this._http.get(foodUrl).subscribe(resp => {
-         const recipes = resp['hits'];
+       this._http.get(foodUrl).subscribe(data => {
+         const recipes = data['hits'];
          recipes.map(ele => {
            let recipe = ele['recipe'];
            const recobj = {
@@ -73,8 +73,8 @@ export class SearchRecipeComponent implements OnInit {
        +"OLN2CXZTAKRCDJ1FEY31BL5YKYFBMGAB5JFEMK42JTQQRCAZ"+
        "&v=20200224&query="
        const placeUrl = venueUrl + this.recipeValue + '&near=' + this.placeValue;
-       this._http.get(placeUrl).subscribe(resp => {
-         const venues = resp['response']['venues'];
+       this._http.get(placeUrl).subscribe(data => {
+         const venues = data['response']['venues'];
          venues.map(ele => {
  
            const venobj = {
