@@ -40,7 +40,12 @@ export class SearchRecipeComponent implements OnInit {
       /**
        * Write code to get recipe
        */
-       let recipeUrl = "https://api.edamam.com/search?app_id=46e25959&app_key=689efccefeaeace910779467d1512aed&q="
+       let recipeUrl = "https://api.edamam.com/search?"+
+       "app_id="+
+       "46e25959"+
+       "&app_key="+
+       "689efccefeaeace910779467d1512aed"+
+       "&q="
        const foodUrl = recipeUrl + this.recipeValue;
        this._http.get(foodUrl).subscribe(resp => {
          const recipes = resp['hits'];
