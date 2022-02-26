@@ -66,26 +66,35 @@ export class SearchRecipeComponent implements OnInit {
       /**
        * Write code to get place
        */
-       let venueUrl = "https://api.foursquare.com/v2/venues/search?"+
-       "client_id="+
-       "RCZLXHTIP5YLWSFK3XJMFLE10ZI14QWM5MIVX4QKNFLM0MQU"+
-       "&client_secret="+
-       +"OLN2CXZTAKRCDJ1FEY31BL5YKYFBMGAB5JFEMK42JTQQRCAZ"+
-       "&v=20200224&query="
-       const placeUrl = venueUrl + this.recipeValue + '&near=' + this.placeValue;
-       this._http.get(placeUrl).subscribe(data => {
-         const venues = data['response']['venues'];
-         venues.map(ele => {
- 
-           const venobj = {
-             name: ele.name,
-             location : {
-               formattedAddress: [ele.location.address, ele.location.city, ele.location.country]
-             }
-           };
-           this.venueList.push(venobj);
-         });
-       });
+       const options = {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'fsq3ZgBSY49GCzPC4OderO33N9x+bO7OVmzbn6ojAqNG3wQ='
+        }
+      };
+      let venueUrl = "https://api.foursquare.com/v3/places/search?"+
+      "&query="
+      const placeUrl = venueUrl + this.recipeValue + '&near=' + this.placeValue;
+      fetch(placeUrl, options)
+        .then(response => response.json())
+        .then(response => {
+          console.log(response)
+          const venues = response['results'];
+          console.log(venues)
+          venues.map(ele => {
+  
+            const venobj = {
+              name: ele.name,
+              location : {
+                formattedAddress: [ele.location.address, ele.location.city, ele.location.country]
+              }
+            };
+            this.venueList.push(venobj);
+          });
+        })
+        .catch(err => console.error(err));
+
     }
   }
 }
